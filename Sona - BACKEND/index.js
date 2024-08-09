@@ -47,7 +47,7 @@ const lipSyncMessage = async (message) => {
     console.log(`Converting ${mp3FileName} to WAV`);
     await execCommand(`ffmpeg -y -i ${mp3FileName} ${wavFileName}`);
     console.log(`Conversion done`);
-    await execCommand(`./bin/Rhubarb-Lip-Sync-1.13.0-macOS/rhubarb -f json -o audios/message_${message}.json ${wavFileName} -r phonetic`);
+    await execCommand(`./bin/rhubarb -f json -o audios/message_${message}.json ${wavFileName} -r phonetic`);
     console.log(`Lip sync done`);
   } catch (error) {
     if (error.code === 'ENOENT') {
