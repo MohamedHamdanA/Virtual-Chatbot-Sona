@@ -42,6 +42,7 @@ Install 'requirements.txt':
 ```bash
 pip install -r requirements.txt
 ```
+
 For JavaScript dependencies, use yarn:
 ```bash
 yarn
@@ -54,6 +55,21 @@ yarn add dotenv
 ```
 
 Download the **RhubarbLibrary** binary for your **OS** [here](https://github.com/DanielSWolf/rhubarb-lip-sync/releases) and put it in your `bin` folder. `rhubarb` executable should be accessible through `bin/rhubarb`.
+
+### Installing Ollama Locally
+
+To install Ollama locally on your machine, follow these steps:
+
+### Prerequisites
+
+- **macOS**: Ensure you have Homebrew installed. If not, you can install it from [brew.sh](https://brew.sh/).
+- **Linux**: Ensure you have `curl` and `tar` installed.
+
+### Installation Steps
+
+**Download Ollama**
+
+   Download the latest release of Ollama directly from the [Ollama official website](https://ollama.com/). Choose the appropriate version for your operating system.
 
 ### Run the API
 Start the FastAPI application with:
