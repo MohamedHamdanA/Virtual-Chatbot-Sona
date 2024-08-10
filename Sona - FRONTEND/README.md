@@ -4,6 +4,7 @@
 
 Sona - Frontend is a React-based web application for interacting with the Sona backend. It provides a user interface to interect with 3D chatbot.
 
+![UI Screen](https://github.com/Addhithya/Sona/blob/main/Sona%20-%20FRONTEND/public/Screenshot%202024-08-10%20at%2022.29.15.png) 
 ## Setup
 
 ### Prerequisites
