@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useChat } from "../hooks/useChat";
-import Subtitle from "./subtitle";
+
 export const UI = ({ hidden, ...props }) => {
   const input = useRef();
   const { chat, loading, cameraZoomed, setCameraZoomed, message } = useChat();
@@ -26,9 +26,8 @@ export const UI = ({ hidden, ...props }) => {
         <div className="w-full flex flex-col items-end justify-center gap-4">
           <button
             onClick={() => setCameraZoomed(!cameraZoomed)}
-            className="pointer-events-auto bg-pink-500 hover:bg-pink-600 text-white p-4 rounded-md"
-          >
-            {cameraZoomed ? (
+            className="pointer-events-auto bg-violet-450 hover:bg-pink-500 text-white p-4 rounded-md"
+>            {cameraZoomed ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -69,9 +68,8 @@ export const UI = ({ hidden, ...props }) => {
                 body.classList.add("greenScreen");
               }
             }}
-            className="pointer-events-auto bg-pink-500 hover:bg-pink-600 text-white p-4 rounded-md"
-          >
-            <svg
+            className="pointer-events-auto bg-violet-450 hover:bg-pink-500 text-white p-4 rounded-md"
+>            <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
