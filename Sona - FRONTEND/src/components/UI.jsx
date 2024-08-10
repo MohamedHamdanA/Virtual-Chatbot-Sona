@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useChat } from "../hooks/useChat";
-
+import Subtitle from "./subtitle";
 export const UI = ({ hidden, ...props }) => {
   const input = useRef();
   const { chat, loading, cameraZoomed, setCameraZoomed, message } = useChat();
@@ -107,6 +107,12 @@ export const UI = ({ hidden, ...props }) => {
             Send
           </button>
         </div>
+        {/* Directly displaying subtitle */}
+        {message && (
+          <div className="fixed bottom-0 left-0 right-0 z-10 p-4 backdrop-blur-md bg-white bg-opacity-50 rounded-lg text-center">
+            <p className="font-black text-xl">{message.text}</p>
+          </div>
+        )}
       </div>
     </>
   );
