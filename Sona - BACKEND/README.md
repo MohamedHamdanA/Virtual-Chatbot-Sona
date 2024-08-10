@@ -15,7 +15,7 @@ Sona's backend application built with FastAPI(main.py) & index.js . It provides 
 
 ```bash
 git clone https://github.com/Addhithya/Sona.git
-cd Sona
+cd "Sona/Sona - Backend"
 ```
 
 
