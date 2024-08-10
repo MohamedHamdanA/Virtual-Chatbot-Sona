@@ -1,6 +1,29 @@
+# Sona - FRONTEND
+
+## Overview
+
+Sona - Frontend is a React-based web application for interacting with the Sona backend. It provides a user interface to interect with 3D chatbot.
+
+## Setup
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (includes Yarn for managing JavaScript dependencies)
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/Addhithya/Sona.git
+cd "Sona/Sona - Frontend"
+```
+
 ## Start the development server with
 
 ```
 yarn
 yarn dev
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
