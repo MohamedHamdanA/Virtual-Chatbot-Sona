@@ -47,7 +47,7 @@ const lipSyncMessage = async (message) => {
     console.log(`Converting ${mp3FileName} to WAV`);
     await execCommand(`ffmpeg -y -i ${mp3FileName} ${wavFileName}`);
     console.log(`Conversion done`);
-    await execCommand(`./bin/rhubarb -f json -o audios/message_${message}.json ${wavFileName} -r phonetic`);
+    await execCommand(`./bin/Rhubarb-Lip-Sync-1.13.0-macOS/rhubarb -f json -o audios/message_${message}.json ${wavFileName} -r phonetic`);
     console.log(`Lip sync done`);
   } catch (error) {
     if (error.code === 'ENOENT') {
@@ -93,58 +93,47 @@ app.post("/chat", async (req, res) => {
           facialExpression: "angry",
           animation: "Angry",
         },
+        {
+          text: "You don't want to ruin Wawa Sensei with a crazy ChatGPT and ElevenLabs bill, right?",
+          audio: await audioFileToBase64("audios/api_1.wav"),
+          lipsync: await readJsonTranscript("audios/api_1.json"),
+          facialExpression: "smile",
+          animation: "Laughing",
+        },
       ],
     });
     return;
   }
 
-  try {
     // Send request to FastAPI server
     const response = await axios.post('http://localhost:8000/generate', { prompt: userMessage });
-    
-    const text = response.data.text;
-    // Convert the plain text response into the required format
-    const messages = [
-      {
-        text: text,
-        facialExpression: "default",
-        animation: "Talking_1"
-      }
-    ];
 
-    const message = messages[0];
-    const fileName = `audios/message_${0}.mp3`;
-    const textInput = message.text;
-        
-    // Convert text to speech
-    await voice.textToSpeech(elevenLabsApiKey, voiceID, fileName, textInput);
-    
-    // Check if the MP3 file was created successfully
+    // Ensure the response is in JSON format
+    let responseData = response.data.text;
+
     try {
-      await fs.access(fileName);
-      console.log(`Audio file created: ${fileName}`);
+        let messages = JSON.parse(responseData);
+        if (messages.messages) {
+            messages = messages.messages;
+        }
+        for (let i = 0; i < messages.length; i++) {
+            const message = messages[i];
+            // generate audio file
+            const fileName = `audios/message_${i}.mp3`; // The name of your audio file
+            const textInput = message.text; // The text you wish to convert to speech
+            await voice.textToSpeech(elevenLabsApiKey, voiceID, fileName, textInput);
+            // generate lipsync
+            await lipSyncMessage(i);
+            message.audio = await audioFileToBase64(fileName);
+            message.lipsync = await readJsonTranscript(`audios/message_${i}.json`);
+        }
+
+        res.send({ messages });
     } catch (error) {
-      console.error(`Audio file not created: ${fileName}`);
-      throw error;
+        console.error("Error parsing JSON:", error);
+        res.status(500).send({ error: "Failed to parse JSON response" });
     }
 
-    await lipSyncMessage(0);
-    message.audio = await audioFileToBase64(fileName);
-    message.lipsync = await readJsonTranscript(`audios/message_${0}.json`);
-
-    res.send({ messages });
-  } catch (error) {
-    console.error("Error generating content:", error);
-    res.status(500).send({
-      messages: [
-        {
-          text: "Sorry, something went wrong while generating the response.",
-          facialExpression: "sad",
-          animation: "Crying",
-        },
-      ],
-    });
-  }
 });
 
 const readJsonTranscript = async (file) => {
