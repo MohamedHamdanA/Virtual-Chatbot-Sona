@@ -4,7 +4,7 @@
 
 Watch the demo of Sona here:
 
-[![Sona Demo Video](https://github.com/Addhithya/Sona/blob/main/Sona%20-%20FRONTEND/public/Screenshot%202024-08-10%20at%2022.29.15.png)](https://github.com/Addhithya/Sona/blob/main/Sona%20-%20FRONTEND/public/3D%20chatbot%20demo480p.mov)
+[![Sona Demo Video](https://github.com/Addhithya/Sona/blob/main/Sona%20-%20FRONTEND/public/Screenshot%202024-08-10%20at%2022.29.15.png)](https://github.com/Addhithya/Sona/blob/main/Sona%20-%20FRONTEND/public/3D%20chatbot%20demo720p.mp4)
 
 ## 3D Model Details
 
