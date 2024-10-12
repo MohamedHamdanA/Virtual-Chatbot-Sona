@@ -1,10 +1,10 @@
 # Sona
 
-## Demo Video
+## Preview
 
 Watch the demo of Sona here:
 
-[![Sona Demo Video](https://github.com/Addhithya/Sona/blob/main/Sona%20-%20FRONTEND/public/Screenshot%202024-08-10%20at%2022.29.15.png)](https://github.com/Addhithya/Sona/blob/main/Sona%20-%20FRONTEND/public/3D%20chatbot%20demo720p.mp4)
+[![Sona Demo Video](https://github.com/MohamedHamdanA/Sona/blob/main/Sona%20-%20FRONTEND/public/Screenshot%202024-08-10%20at%2022.29.15.png)](https://github.com/MohamedHamdanA/Sona/blob/main/Sona%20-%20FRONTEND/public/3D%20chatbot%20demo720p.mp4)
 
 ## 3D Model Details
 
@@ -12,8 +12,8 @@ The 3D model for Sona was created using [Ready Player Me](https://readyplayer.me
 
 ## Repositories
 
-- **Frontend**: The frontend of the Sona project is hosted in the [Sona-frontend repository](https://github.com/Addhithya/Sona/tree/main/Sona%20-%20FRONTEND).
-- **Backend**: The backend of the Sona project is hosted in the [Sona-backend repository](https://github.com/Addhithya/Sona/tree/main/Sona%20-%20BACKEND).
+- **Frontend**: The frontend of the Sona project is hosted in the [Sona-frontend repository](https://github.com/MohamedHamdanA/Sona/tree/main/Sona%20-%20FRONTEND).
+- **Backend**: The backend of the Sona project is hosted in the [Sona-backend repository](https://github.com/MohamedHamdanA/Sona/tree/main/Sona%20-%20BACKEND).
 
 ## Ackowlegdements
 
