@@ -14,8 +14,8 @@ Sona's backend application built with FastAPI(main.py) & index.js . It provides 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/Addhithya/Sona.git
-cd "Sona/Sona - Backend"
+git clone https://github.com/MohamedHamdanA/Virtual-Chatbot-Sona.git
+cd "Virtual-Chatbot-Sona/Sona - Backend"
 ```
 
 
